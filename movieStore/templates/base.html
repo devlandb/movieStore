@@ -27,6 +27,13 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto navbar-ml">
                     <a class="nav-link" href="{%url 'home.about' %}">About</a>
+                    <a class="nav-link" href="{% url 'movies.index'%}">Movies</a>
+                    {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'accounts.logout' %}">Logout ({{user.username }})</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'accounts.login' %}">Login</a>
+                    <a class="nav-link" href="{% url 'accounts.signup' %}">Sign Up</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -69,7 +76,11 @@
         <div class="me-5 text-white">
             <span>
                 DESIGNED BY
-                <a href="#" target="_blank">Teja Akella</a> & <a href="https://www.x.com/greglim 81" target="_blank">GREG LIM</a>
+                <a href="#" target="_blank">Teja Akella</a>
+                & <a href="#" target="_blank">Omar Al-Obaidi</a>
+                & <a href="#" target="_blank">Joshua Park</a>
+                & <a href=#" target="_blank">Vishnu</a>
+                & <a href=#" target="_blank">Devland Beasly</a>
             </span>
         </div>
         <div class="text-white">
